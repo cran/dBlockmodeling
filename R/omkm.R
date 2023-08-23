@@ -1,9 +1,10 @@
 #' One-Mode K-Means Heuristic
 #'
-#' @description This function runs one-mode K-means for an \eqn{RO x RO} network matrix.
+#' @description This functions runs one-mode K-means for an \eqn{RO x RO} network matrix.
 #' @param A An \eqn{RO x RO} one-mode network matrix.
 #' @param RC The number of clusters for row objects (\eqn{1 < RC < RO}).
-#' @param TLIMIT A desired time limit.
+#' @param TLIMIT A desired time limit.- for function \code{omkm} only.
+#' @param REP The number of repetitions - for function \code{omkmNrep} only.
 #' @param IDIAG 0 if main diagonal to be ignored, any other value it will be included. Default is 0.
 #' @return The function returns the following:
 #' \itemize{
@@ -46,5 +47,26 @@ omkm = function(A,RC,TLIMIT,IDIAG=0) {
 	vaf <- res[[8]]
 	restarts <- res[[9]]
 	return(list(RP=RP, sse=sse, vaf=vaf, restarts=restarts))
+
+}
+
+#' @rdname omkm
+#'
+#' @export
+omkmNrep = function(A,RC,REP,IDIAG=0) {
+
+  RO = dim(A)[1]
+  VAF = 0
+  ZBEST = 0
+  NREPS = 0
+  RBEST <- matrix(0, nrow = RO, ncol = 1)
+  #	dyn.load("c:/RBlockmodeling/omklm.dll")
+  res =.Fortran("omkmNrepf",as.integer(RO),as.integer(RC),as.integer(IDIAG),as.integer(REP),as.double(A),as.integer(RBEST),as.double(ZBEST),as.double(VAF),as.integer(NREPS))
+  #	res =.Fortran("tmklm",as.integer(RO),as.integer(CO),as.integer(RC),as.integer(CC),as.double(TLIMIT),as.double(A))
+  RP <- res[[6]]
+  sse <- res[[7]]
+  vaf <- res[[8]]
+  restarts <- res[[9]]
+  return(list(RP=RP, sse=sse, vaf=vaf, restarts=restarts))
 
 }

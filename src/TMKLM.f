@@ -21,7 +21,7 @@ C  MULTISTART TWO-MODE KL-MEANS (WCSS CRITERION) BLOCK PLACEMENTS **UNKNOWN**
           ASUM = ASUM + A(I,J)
         END DO
       END DO
-      ASUM = ASUM/DFLOAT(RO*CO)
+      ASUM = ASUM/DBLE(RO*CO)
       DO I = 1,RO
         DO J = 1,CO
           ASSE = ASSE + (A(I,J)-ASUM)**2
@@ -119,7 +119,7 @@ C
         DO K = 1,RC
           DO L = 1,CC
             IF(NR(K).GT.0.AND.NC(L).GT.0) THEN
-              V(K,L) = V(K,L)/DFLOAT(NR(K)*NC(L))
+              V(K,L) = V(K,L)/DBLE(NR(K)*NC(L))
             END IF
           END DO
         END DO
@@ -177,7 +177,7 @@ C
         DO K = 1,RC
           DO L = 1,CC
             IF(NR(K).GT.0.AND.NC(L).GT.0) THEN
-              V(K,L) = V(K,L)/DFLOAT(NR(K)*NC(L))
+              V(K,L) = V(K,L)/DBLE(NR(K)*NC(L))
             END IF
           END DO
         END DO
@@ -233,7 +233,7 @@ C
         DO K = 1,RC
           DO L = 1,CC
             IF(NR(K).GT.0.AND.NC(L).GT.0) THEN
-              V(K,L) = V(K,L)/DFLOAT(NR(K)*NC(L))
+              V(K,L) = V(K,L)/DBLE(NR(K)*NC(L))
             END IF
           END DO
         END DO

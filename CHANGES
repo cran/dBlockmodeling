@@ -1,0 +1,4 @@
+Version: 0.2.3
+Date: 2023-6-19
+
+Changed DFLOAT with DBLE in Fortran files as requested by CRAN (Brian Ripley)

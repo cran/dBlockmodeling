@@ -1,7 +1,7 @@
 #' Two-Mode Blockmodeling (Structural Equivalence) Heuristic
 #'
-#' @description This function runs two-mode KL-medians for an \eqn{RO x CO} network matrix.
-#' @param A An \eqn{RO x CO} two-mode network matrix.
+#' @description This function runs two-mode KL-medians for an \eqn{RO x CO} two-mode binary network matrix.
+#' @param A An \eqn{RO x CO} two-mode binary network matrix.
 #' @param RC The number of clusters for row objects (\eqn{1 < RC < RO}).
 #' @param CC The number of clusters for column objects (\eqn{1 < CC < CO}).
 #' @param TLIMIT A desired time limit.

@@ -2,18 +2,23 @@
 % Please edit documentation in R/omkm.R
 \name{omkm}
 \alias{omkm}
+\alias{omkmNrep}
 \title{One-Mode K-Means Heuristic}
 \usage{
 omkm(A, RC, TLIMIT, IDIAG = 0)
+
+omkmNrep(A, RC, REP, IDIAG = 0)
 }
 \arguments{
 \item{A}{An \eqn{RO x RO} one-mode network matrix.}
 
 \item{RC}{The number of clusters for row objects (\eqn{1 < RC < RO}).}
 
-\item{TLIMIT}{A desired time limit.}
+\item{TLIMIT}{A desired time limit.- for function \code{omkm} only.}
 
 \item{IDIAG}{0 if main diagonal to be ignored, any other value it will be included. Default is 0.}
+
+\item{REP}{The number of repetitions - for function \code{omkmNrep} only.}
 }
 \value{
 The function returns the following:
@@ -25,7 +30,7 @@ The function returns the following:
 }
 }
 \description{
-This function runs one-mode K-means for an \eqn{RO x RO} network matrix.
+This functions runs one-mode K-means for an \eqn{RO x RO} network matrix.
 }
 \examples{
 # Load the notes borrowing data..

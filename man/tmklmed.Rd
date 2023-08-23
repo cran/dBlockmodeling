@@ -7,7 +7,7 @@
 tmklmed(A, RC, CC, TLIMIT)
 }
 \arguments{
-\item{A}{An \eqn{RO x CO} two-mode network matrix.}
+\item{A}{An \eqn{RO x CO} two-mode binary network matrix.}
 
 \item{RC}{The number of clusters for row objects (\eqn{1 < RC < RO}).}
 
@@ -25,7 +25,7 @@ The function returns the following:
 }
 }
 \description{
-This function runs two-mode KL-medians for an \eqn{RO x CO} network matrix.
+This function runs two-mode KL-medians for an \eqn{RO x CO} two-mode binary network matrix.
 }
 \examples{
 # Load the Turning Point Project network (Brusco & Doreian, 2015) data.
